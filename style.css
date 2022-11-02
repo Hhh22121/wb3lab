@@ -16,6 +16,6 @@
 header {
   height: 710.7745361328125px;
   width: 1008.0800170898438px;
-
   background: url("./images/headerLeftBG.png") top left no-repeat;
+  background-position: -3px;
 }
