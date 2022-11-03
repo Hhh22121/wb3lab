@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  --background-color: #110e21;
+  color: white;
+}
+
+body {
+  background: var(--background-color);
+}
+
+.app {
+  width: 100%;
+  min-height: 500px;
+  height: max-content;
+  position: relative;
+}
+
+.wrapper {
+  width: 83.33%;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+}
+
+.logo {
+  margin-top: 48px;
+}
+
+.bg-pink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: -2;
+}
+
+.header-bg-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 79.76%;
+  background: url("../images/headerLeftBG.png") top left no-repeat;
+  background-size: 100%;
+}
+
+.header-big-logo {
+  position: absolute;
+  right: 12.58%;
+  left: 47.81%;
+  margin-top: 110px;
+}
+
+.header-big-logo img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.header-title {
+  font-family: "Future Earth";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  margin-top: 102px;
+}
+
+.normal-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
