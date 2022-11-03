@@ -13,7 +13,7 @@ body {
 
 .app {
   width: 100%;
-  min-height: 500px;
+  min-height: 1100px;
   height: max-content;
   position: relative;
 }
@@ -69,11 +69,42 @@ header {
   font-weight: 400;
   font-size: 32px;
   line-height: 38px;
-  margin-top: 102px;
+  margin-top: 200px;
 }
 
 .normal-text {
+  font-family: "Inter";
+  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+}
+.item-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 10px;
+}
+.feature {
+  position: relative;
+  left: 15%;
+  top: 35%;
+}
+.item{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.supporting{ 
+  position: relative;
+}
+
+.bg-shadow{
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 0;
 }
