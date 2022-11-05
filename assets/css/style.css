@@ -22,6 +22,25 @@ body {
   left: 150px;
   z-index: 99;
 }
+@media (max-width: 500px) {
+  #header .header-logo {
+    position: absolute;
+    top: 15px;
+    left: 32px;
+    z-index: 99;
+    width: 20%;
+  }
+}
+
+@media screen and (min-device-width: 501px) and (max-device-width: 1050px) {
+  #header .header-logo {
+    position: absolute;
+    top: 40px;
+    left: 56px;
+    z-index: 99;
+    width: 20%;
+  }
+}
 
 #content {
   position: relative;
@@ -54,6 +73,72 @@ body {
   font-size: 28px;
   line-height: 38px;
 }
+#content .content-text .logo-web3 {
+  margin-bottom: 12px;
+}
+@media (max-width: 500px) {
+  #content .content-text .header-title {
+    font-family: "Future Earth";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 6px;
+    line-height: 10px;
+    margin-bottom: 0px !important;
+  }
+
+  #content .content-text .logo-web3 {
+    width: 20%;
+    margin-bottom: 0px !important;
+  }
+  #content .content-text .normal-text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 6px;
+    line-height: 6px;
+  }
+}
+@media screen and (min-device-width: 501px) and (max-device-width: 767px) {
+  #content .content-text .header-title {
+    font-family: "Future Earth";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+  }
+  #content .content-text .logo-web3 {
+    margin-bottom: 8px;
+    width: 40%;
+  }
+  #content .content-text .normal-text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+  }
+}
+@media screen and (min-device-width: 768px) and (max-device-width: 1050px) {
+  #content .content-text .header-title {
+    font-family: "Future Earth";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  #content .content-text .logo-web3 {
+    margin-bottom: 12px;
+    width: 80%;
+  }
+  #content .content-text .normal-text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
 .normal-text {
   font-family: "Inter";
   font-style: normal;
@@ -64,7 +149,23 @@ body {
 #content .img-right {
   position: absolute;
   top: 15%;
-  left: 48%;
+  left: 49%;
+  width: 29%;
+}
+@media (max-width: 1500px) {
+  #content .img-right {
+    position: absolute;
+    top: 15%;
+    left: 44%;
+  }
+}
+@media (max-width: 1400px) {
+  #content .img-right {
+    position: absolute;
+    top: 15%;
+    left: 48%;
+    width: 32%;
+  }
 }
 
 .ms-text {
@@ -84,23 +185,192 @@ body {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 10px;
+  font-size: 1rem;
+  line-height: 6px;
+  margin-top: 12px;
+  margin-left: 10px;
 }
 .sm-mission {
   position: relative;
   left: 15%;
   top: 35%;
 }
+.img-ourvison {
+  margin-bottom: 12px;
+}
+@media (max-width: 540px) {
+  .sm-mission {
+    position: relative;
+    left: 0%;
+    top: 27%;
+  }
+  .img-ourvison {
+    position: absolute;
+    margin-bottom: 0px !important;
+    top: -12px;
+  }
+  .part {
+    position: absolute;
+    top: 100%;
+  }
+  .normal-text {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 6px;
+    line-height: 7px;
+    white-space: nowrap;
+  }
+}
+@media screen and (min-device-width: 541px) and (max-device-width: 899px) {
+  .sm-mission {
+    position: relative;
+    left: 0%;
+    top: 27%;
+  }
+  .img-ourvison {
+    position: absolute;
+    margin-bottom: 0px !important;
+    top: -14px;
+  }
+  .part {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+  .normal-text {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 10px;
+    white-space: nowrap;
+  }
+}
+@media screen and (min-device-width: 900px) and (max-device-width: 1500px) {
+  .sm-mission {
+    position: relative;
+    left: 0%;
+    top: 27%;
+  }
+  .img-ourvison {
+    position: absolute;
+    margin-bottom: 0px !important;
+    top: -14px;
+  }
+  .part {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .normal-text {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    white-space: nowrap;
+  }
+}
+
 .sm-building {
   position: relative;
   left: 25%;
   top: 30%;
 }
+
+@media (max-width: 540px) {
+  .sm-building {
+    position: relative;
+    left: 25%;
+    top: 30%;
+  }
+  .img-we-are {
+    position: absolute;
+    top: -12px;
+  }
+  .img-building {
+    margin-bottom: 0px !important;
+  }
+  .img-item {
+    width: 6%;
+  }
+  .item-text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4px;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+    margin-bottom: 0px !important;
+    white-space: nowrap;
+  }
+}
+@media screen and (min-device-width: 541px) and (max-device-width: 899px) {
+  .sm-building {
+    position: relative;
+    left: 25%;
+    top: 30%;
+  }
+  .img-we-are {
+    position: absolute;
+    top: -20px;
+  }
+  .img-building {
+    margin-bottom: 10px !important;
+  }
+  .img-item {
+    width: 6%;
+  }
+  .item-text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 7px;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+    margin-bottom: 0px !important;
+    white-space: nowrap;
+  }
+}
+@media screen and (min-device-width: 900px) and (max-device-width: 1500px) {
+  .sm-building {
+    position: relative;
+    left: 25%;
+    top: 30%;
+  }
+  .img-we-are {
+    position: absolute;
+    top: -25px;
+  }
+  .img-building {
+    margin-bottom: 20px !important;
+  }
+  .img-item {
+    width: 6%;
+  }
+  .item-text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+    margin-bottom: 8px !important;
+    white-space: nowrap;
+  }
+}
 .item {
   display: flex;
   align-items: center;
   justify-content: start;
+}
+.img-we-are {
+  margin-bottom: 12px;
+}
+.img-building {
+  margin-bottom: 40px;
 }
 .supporting {
   position: relative;
@@ -118,14 +388,128 @@ body {
 .footer {
   padding: 56px 0;
 }
+.footer-logo {
+  width: 60%;
+}
+.footer-text {
+  margin-top: 8px;
+}
+.footer-ct {
+  width: 50%;
+}
 
+@media (max-width: 540px) {
+  .footer {
+    padding: 0;
+  }
+  .footer-logo {
+    width: 80%;
+  }
+  .footer-text {
+    margin-top: 8px;
+    font-size: 7px;
+  }
+  .footer-ct {
+    width: 100%;
+  }
+  .footer-menu-item {
+    font-size: 6px;
+    white-space: nowrap;
+    line-height: 10px !important;
+  }
+  .footer-copyright {
+    font-weight: 400;
+    font-size: 7px !important;
+    line-height: 10px !important;
+  }
+  .footer-line img {
+    width: 6% !important;
+  }
+  .line {
+    margin-top: 8px !important;
+  }
+  .footer-logo-social {
+    margin-right: 10px !important;
+  }
+}
+
+@media screen and (min-device-width: 541px) and (max-device-width: 700px) {
+  .footer {
+    padding: 0;
+  }
+  .footer-logo {
+    width: 80%;
+  }
+  .footer-text {
+    margin-top: 8px;
+    font-size: 7px;
+  }
+  .footer-ct {
+    width: 100%;
+  }
+  .footer-menu-item {
+    font-size: 6px;
+    white-space: nowrap;
+    line-height: 10px !important;
+  }
+  .footer-copyright {
+    font-weight: 400;
+    font-size: 7px !important;
+    line-height: 10px !important;
+  }
+  .footer-line img {
+    width: 6% !important;
+  }
+  .line {
+    margin-top: 8px !important;
+  }
+  .footer-logo-social {
+    margin-right: 10px !important;
+  }
+}
+@media screen and (min-device-width: 701px) and (max-device-width: 1500px) {
+  .footer {
+    padding: 0;
+  }
+  .footer-logo {
+    width: 80%;
+  }
+  .footer-text {
+    margin-top: 8px;
+    font-size: 15px;
+  }
+  .footer-ct {
+    width: 100%;
+  }
+  .footer-menu-item {
+    font-size: 10px;
+    white-space: nowrap;
+    line-height: 15px !important;
+  }
+  .footer-copyright {
+    font-weight: 400;
+    font-size: 10px !important;
+    line-height: 10px !important;
+  }
+  .footer-line img {
+    width: 4% !important;
+  }
+  .line {
+    margin-top: 8px !important;
+  }
+  .footer-logo-social {
+    margin-right: 10px !important;
+  }
+}
 .footer-menu-item {
   display: block;
   color: #fff;
   text-decoration: none;
   line-height: 28px;
 }
-
+.line {
+  margin-top: 28px;
+}
 .footer-line {
   height: 0;
   width: 100%;
