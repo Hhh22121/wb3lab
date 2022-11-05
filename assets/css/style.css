@@ -2,20 +2,77 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+
   --background-color: #110e21;
   color: white;
+}
+html {
+  font-family: "Inter", sans-serif;
 }
 
 body {
   background: var(--background-color);
 }
-
-.app {
-  width: 100%;
-  min-height: 1100px;
-  height: max-content;
+#header {
   position: relative;
+}
+#header .header-logo {
+  position: absolute;
+  top: 50px;
+  left: 150px;
+  z-index: 99;
+}
+
+#content {
+  position: relative;
+}
+#content .img-shadow {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 10;
+  z-index: -99;
+}
+#content .img-left {
+  width: 80%;
+  padding-top: 56%;
+  background-image: url(/assets/images/headerLeftBG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: -5px;
+}
+#content .content-text {
+  position: absolute;
+  top: 30%;
+  left: 8%;
+}
+#content .content-text .header-title {
+  font-family: "Future Earth";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 38px;
+}
+.normal-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
+#content .img-right {
+  position: absolute;
+  top: 15%;
+  left: 48%;
+}
+
+.ms-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .wrapper {
@@ -23,67 +80,11 @@ body {
   margin: 0 auto;
 }
 
-header {
-  width: 100%;
-}
-
-.logo {
-  margin-top: 48px;
-}
-
-.bg-pink {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: -2;
-}
-
-.header-bg-left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  height: 100%;
-  width: 79.76%;
-  background: url("../images/headerLeftBG.png") top left no-repeat;
-  background-size: 100%;
-}
-
-.header-big-logo {
-  position: absolute;
-  right: 12.58%;
-  left: 47.81%;
-  margin-top: 110px;
-}
-
-.header-big-logo img {
-  width: 100%;
-  object-fit: contain;
-}
-
-.header-title {
-  font-family: "Future Earth";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 38px;
-  margin-top: 200px;
-}
-
-.normal-text {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-}
 .item-text {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 10px;
 }
 .sm-mission {
@@ -91,7 +92,7 @@ header {
   left: 15%;
   top: 35%;
 }
-.sm-building{
+.sm-building {
   position: relative;
   left: 25%;
   top: 30%;
