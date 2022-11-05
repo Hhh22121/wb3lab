@@ -32,7 +32,7 @@ body {
   }
 }
 
-@media screen and (min-device-width: 501px) and (max-device-width: 1050px) {
+@media screen and (min-width: 501px) and (max-width: 1050px) {
   #header .header-logo {
     position: absolute;
     top: 40px;
@@ -98,7 +98,7 @@ body {
     line-height: 6px;
   }
 }
-@media screen and (min-device-width: 501px) and (max-device-width: 767px) {
+@media screen and (min-width: 501px) and (max-width: 767px) {
   #content .content-text .header-title {
     font-family: "Future Earth";
     font-style: normal;
@@ -118,7 +118,7 @@ body {
     line-height: 12px;
   }
 }
-@media screen and (min-device-width: 768px) and (max-device-width: 1050px) {
+@media screen and (min-width: 768px) and (max-width: 1050px) {
   #content .content-text .header-title {
     font-family: "Future Earth";
     font-style: normal;
@@ -222,7 +222,7 @@ body {
     white-space: nowrap;
   }
 }
-@media screen and (min-device-width: 541px) and (max-device-width: 899px) {
+@media screen and (min-width: 541px) and (max-width: 899px) {
   .sm-mission {
     position: relative;
     left: 0%;
@@ -247,7 +247,7 @@ body {
     white-space: nowrap;
   }
 }
-@media screen and (min-device-width: 900px) and (max-device-width: 1500px) {
+@media screen and (min-width: 900px) and (max-width: 1500px) {
   .sm-mission {
     position: relative;
     left: 0%;
@@ -307,7 +307,7 @@ body {
     white-space: nowrap;
   }
 }
-@media screen and (min-device-width: 541px) and (max-device-width: 899px) {
+@media screen and (min-width: 541px) and (max-width: 899px) {
   .sm-building {
     position: relative;
     left: 25%;
@@ -334,7 +334,7 @@ body {
     white-space: nowrap;
   }
 }
-@media screen and (min-device-width: 900px) and (max-device-width: 1500px) {
+@media screen and (min-width: 900px) and (max-width: 1500px) {
   .sm-building {
     position: relative;
     left: 25%;
@@ -433,7 +433,7 @@ body {
   }
 }
 
-@media screen and (min-device-width: 541px) and (max-device-width: 700px) {
+@media screen and (min-width: 541px) and (max-width: 700px) {
   .footer {
     padding: 0;
   }
@@ -467,7 +467,7 @@ body {
     margin-right: 10px !important;
   }
 }
-@media screen and (min-device-width: 701px) and (max-device-width: 1500px) {
+@media screen and (min-width: 701px) and (max-width: 1500px) {
   .footer {
     padding: 0;
   }
