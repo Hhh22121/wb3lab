@@ -21,298 +21,485 @@
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-  <body>
-    <div id="main">
-      <div id="header">
-        <div class="header-logo">
-          <img src="./assets/images/logo.png" style="width: 100%" alt="bg" />
+  <style>
+    .sp-loading {
+      background: #061037 !important;
+      position: fixed;
+      z-index: 999999;
+      top: 0;
+      left: 0;
+      user-select: none;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sp-loading .element {
+      width: 50px;
+      height: 50px;
+      background: white;
+      position: absolute;
+      left: 50%;
+      margin-left: -25px;
+      top: 50%;
+      margin-top: -25px;
+    }
+
+    .sp-loading .loading {
+      font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      top: 50%;
+      margin-top: 25px;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+    }
+
+    @-webkit-keyframes translateIn {
+      30% {
+        -webkit-transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg)
+          translateZ(20px) scale(0.95);
+        opacity: 0.25;
+      }
+
+      100% {
+        -webkit-transform: rotateX(65deg) rotateY(0deg) rotateZ(45deg)
+          translateZ(0px) scale(0.85);
+        opacity: 0;
+      }
+    }
+
+    @keyframes translateIn {
+      30% {
+        -webkit-transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg)
+          translateZ(20px) scale(0.95);
+        transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg) translateZ(20px)
+          scale(0.95);
+        opacity: 0.25;
+      }
+
+      100% {
+        -webkit-transform: rotateX(65deg) rotateY(0deg) rotateZ(45deg)
+          translateZ(0px) scale(0.85);
+        transform: rotateX(65deg) rotateY(0deg) rotateZ(45deg) translateZ(0px)
+          scale(0.85);
+        opacity: 0;
+      }
+    }
+
+    .sp-loading .element {
+      opacity: 0;
+    }
+
+    .sp-loading .element:nth-of-type(1) {
+      -webkit-transform: rotateX(70deg) rotateY(0deg) rotateZ(45deg)
+        translateZ(30px);
+      transform: rotateX(70deg) rotateY(0deg) rotateZ(45deg) translateZ(30px);
+      -webkit-animation: translateIn 1.5s ease-in infinite 500ms;
+      animation: translateIn 1.5s ease-in infinite 500ms;
+    }
+
+    .sp-loading .element:nth-of-type(2) {
+      -webkit-transform: rotateX(70deg) rotateY(0deg) rotateZ(45deg)
+        translateZ(60px);
+      transform: rotateX(70deg) rotateY(0deg) rotateZ(45deg) translateZ(60px);
+      -webkit-animation: translateIn 1.5s ease-in infinite 700ms;
+      animation: translateIn 1.5s ease-in infinite 700ms;
+    }
+
+    .sp-loading .element:nth-of-type(3) {
+      -webkit-transform: rotateX(70deg) rotateY(0deg) rotateZ(45deg)
+        translateZ(90px);
+      transform: rotateX(70deg) rotateY(0deg) rotateZ(45deg) translateZ(90px);
+      -webkit-animation: translateIn 1.5s ease-in infinite 800ms;
+      animation: translateIn 1.5s ease-in infinite 800ms;
+    }
+
+    @-webkit-keyframes scaleIn {
+      80% {
+        -webkit-transform: rotateX(65deg) rotateY(0deg) rotateZ(45deg)
+          scale(1.25);
+        opacity: 0.1;
+      }
+
+      100% {
+        -webkit-transform: rotateX(65deg) rotateY(0deg) rotateZ(45deg) scale(1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes scaleIn {
+      80% {
+        -webkit-transform: rotateX(65deg) rotateY(0deg) rotateZ(45deg)
+          scale(1.25);
+        transform: rotateX(65deg) rotateY(0deg) rotateZ(45deg) scale(1.25);
+        opacity: 0.1;
+      }
+
+      100% {
+        -webkit-transform: rotateX(65deg) rotateY(0deg) rotateZ(45deg) scale(1);
+        transform: rotateX(65deg) rotateY(0deg) rotateZ(45deg) scale(1);
+        opacity: 0;
+      }
+    }
+
+    .sp-loading .large-square {
+      width: 70px;
+      height: 70px;
+      background: white;
+      position: absolute;
+      left: 50%;
+      margin-left: -35px;
+      top: 50%;
+      margin-top: -35px;
+      -webkit-transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg) scale(0);
+      transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg) scale(0);
+      opacity: 0;
+      -webkit-animation: scaleIn 3s linear infinite 500ms;
+      animation: scaleIn 3s linear infinite 500ms;
+    }
+  </style>
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        "gtm.start": new Date().getTime(),
+        event: "gtm.js",
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-M42NTKT");
+  </script>
+
+  <noscript
+    ><iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-M42NTKT"
+      height="0"
+      width="0"
+      style="display: none; visibility: hidden"
+    ></iframe
+  ></noscript>
+
+  <body class="overflow-hidden">
+    <div class="sp-loading" id="SPLoading">
+      <div class="element"></div>
+      <div class="element"></div>
+      <div class="element"></div>
+      <div class="loading mt-2">Loading…</div>
+      <div class="large-square"></div>
+    </div>
+    <main>
+      <div id="main">
+        <div id="header">
+          <div class="header-logo">
+            <img src="./assets/images/logo.png" style="width: 100%" alt="bg" />
+          </div>
         </div>
-      </div>
-      <div id="content">
-        <div class="img-shadow">
+        <div id="content">
+          <div class="img-shadow">
+            <img
+              src="./assets/images/header-bg-violet.png"
+              style="width: 100%"
+              alt="bg"
+            />
+          </div>
+          <div class="img-left"></div>
+          <div class="content-text">
+            <p class="header-title">
+              ACCELERATING <br />
+              THE ADOPTION OF
+            </p>
+            <div class="logo-web3">
+              <img
+                style="width: 90%"
+                src="./assets/images/web3.png"
+                alt="web3"
+              />
+            </div>
+            <p class="normal-text">
+              Web3Lab is a group of volunteers and technology <br />
+              enthusiasts that empower the Future of Web3
+            </p>
+          </div>
+          <div class="img-right">
+            <img
+              src="./assets/images/BigLogo.png"
+              style="width: 130%"
+              alt="headerLeftBG"
+            />
+          </div>
+        </div>
+        <!-- end top -->
+
+        <div class="wrapper">
+          <div class="row">
+            <div class="col col-6">
+              <img
+                src="./assets/images/computer.png"
+                style="width: 90%; position: relative; z-index: -999"
+                alt="computer"
+              />
+            </div>
+            <div class="col col-6">
+              <div class="sm-mission">
+                <div class="img-ourvison">
+                  <img
+                    src="./assets/images/main-ourvison.png"
+                    style="width: 50%"
+                    alt="ourvison"
+                  />
+                </div>
+                <img
+                  src="./assets/images/main-&.png"
+                  style="width: 8%"
+                  alt="&"
+                />
+                &nbsp;
+                <img
+                  src="./assets/images/main-mission.png"
+                  alt="mission"
+                  style="width: 60%"
+                />
+                <p class="normal-text">
+                  We do believe that Web3 will be the future of the <br />
+                  internet but the transition and mass adoption will not <br />
+                  be easy. Our mission is to help people to access Web3 <br />
+                  easily and bring Web3 to their daily life.
+                </p>
+                <div class="part">
+                  <img
+                    src="./assets/images/part-of-the-mission.png"
+                    alt="part-of-the-mission"
+                    style="width: 35%"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="main">
+            <div class="row">
+              <div class="col col-4">
+                <div class="sm-building">
+                  <div class="img-we-are">
+                    <img
+                      src="./assets/images/main-we-are.png"
+                      alt="main-we-are"
+                      style="width: 50%"
+                    />
+                  </div>
+                  <div class="img-building">
+                    <img
+                      src="./assets/images/main-building.png"
+                      alt="main-building"
+                      style="width: 90%"
+                    />
+                  </div>
+
+                  <p class="item-text">
+                    <img
+                      src="./assets/images/icon-listitem.png  "
+                      alt="main-building"
+                      style="margin-right: 5px"
+                    />
+                    Web3 Wallet
+                  </p>
+
+                  <p class="item-text">
+                    <img
+                      src="./assets/images/icon-listitem.png  "
+                      alt="main-building"
+                      style="margin-right: 5px"
+                    />
+                    NFT & Asset management
+                  </p>
+
+                  <p class="item-text">
+                    <img
+                      src="./assets/images/icon-listitem.png  "
+                      alt="main-building"
+                      style="margin-right: 5px"
+                    />
+                    P2P communication protocol & Application
+                  </p>
+
+                  <p class="item-text">
+                    <img
+                      src="./assets/images/icon-listitem.png  "
+                      alt="main-building"
+                      style="margin-right: 5px"
+                    />
+                    Decentralized Digital ID
+                  </p>
+
+                  <p class="item-text">
+                    <img
+                      src="./assets/images/icon-listitem.png  "
+                      alt="main-building"
+                      style="margin-right: 5px"
+                    />
+                    Decentralized Autonomous Organization platform
+                  </p>
+
+                  <p class="item-text">
+                    <img
+                      src="./assets/images/icon-listitem.png  "
+                      alt="main-building"
+                      style="margin-right: 5px"
+                    />
+                    Crypto Currency and Tokenomics
+                  </p>
+
+                  <p class="item-text">
+                    <img
+                      src="./assets/images/icon-listitem.png  "
+                      alt="main-building"
+                      style="margin-right: 5px"
+                    />
+                    Dapp & tools
+                  </p>
+                </div>
+              </div>
+              <div class="col col-8">
+                <img
+                  src="./assets/images/phone-bg.png"
+                  style="width: 100%"
+                  alt="phone"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="supporting">
           <img
-            src="./assets/images/header-bg-violet.png"
-            style="width: 100%"
+            class="logo"
+            src="./assets/images/WeAreSupporting.png"
+            alt="logo"
+            style="width: 100%; position: relative; z-index: 2"
+          />
+          <img
+            class="bg-shadow"
+            src="./assets/images/shadow-building.png"
             alt="bg"
           />
         </div>
-        <div class="img-left"></div>
-        <div class="content-text">
-          <p class="header-title">
-            ACCELERATING <br />
-            THE ADOPTION OF
-          </p>
-          <div class="logo-web3">
-            <img style="width: 90%" src="./assets/images/web3.png" alt="web3" />
-          </div>
-          <p class="normal-text">
-            Web3Lab is a group of volunteers and technology <br />
-            enthusiasts that empower the Future of Web3
-          </p>
-        </div>
-        <div class="img-right">
-          <img
-            src="./assets/images/BigLogo.png"
-            style="width: 130%"
-            alt="headerLeftBG"
-          />
-        </div>
-      </div>
-      <!-- end top -->
 
-      <div class="wrapper">
-        <div class="row">
-          <div class="col col-6">
-            <img
-              src="./assets/images/computer.png"
-              style="width: 90%; position: relative; z-index: -999"
-              alt="computer"
-            />
-          </div>
-          <div class="col col-6">
-            <div class="sm-mission">
-              <div class="img-ourvison">
-                <img
-                  src="./assets/images/main-ourvison.png"
-                  style="width: 50%"
-                  alt="ourvison"
-                />
-              </div>
-              <img src="./assets/images/main-&.png" style="width: 8%" alt="&" />
-              &nbsp;
-              <img
-                src="./assets/images/main-mission.png"
-                alt="mission"
-                style="width: 60%"
-              />
-              <p class="normal-text">
-                We do believe that Web3 will be the future of the <br />
-                internet but the transition and mass adoption will not <br />
-                be easy. Our mission is to help people to access Web3 <br />
-                easily and bring Web3 to their daily life.
-              </p>
-              <div class="part">
-                <img
-                  src="./assets/images/part-of-the-mission.png"
-                  alt="part-of-the-mission"
-                  style="width: 35%"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="wrapper">
-        <div class="main">
-          <div class="row">
-            <div class="col col-4">
-              <div class="sm-building">
-                <div class="img-we-are">
-                  <img
-                    src="./assets/images/main-we-are.png"
-                    alt="main-we-are"
-                    style="width: 50%"
-                  />
-                </div>
-                <div class="img-building">
-                  <img
-                    src="./assets/images/main-building.png"
-                    alt="main-building"
-                    style="width: 90%"
-                  />
-                </div>
-
-                <p class="item-text">
-                  <img
-                    src="./assets/images/icon-listitem.png  "
-                    alt="main-building"
-                    style="margin-right: 5px"
-                  />
-                  Web3 Wallet
-                </p>
-
-                <p class="item-text">
-                  <img
-                    src="./assets/images/icon-listitem.png  "
-                    alt="main-building"
-                    style="margin-right: 5px"
-                  />
-                  NFT & Asset management
-                </p>
-
-                <p class="item-text">
-                  <img
-                    src="./assets/images/icon-listitem.png  "
-                    alt="main-building"
-                    style="margin-right: 5px"
-                  />
-                  P2P communication protocol & Application
-                </p>
-
-                <p class="item-text">
-                  <img
-                    src="./assets/images/icon-listitem.png  "
-                    alt="main-building"
-                    style="margin-right: 5px"
-                  />
-                  Decentralized Digital ID
-                </p>
-
-                <p class="item-text">
-                  <img
-                    src="./assets/images/icon-listitem.png  "
-                    alt="main-building"
-                    style="margin-right: 5px"
-                  />
-                  Decentralized Autonomous Organization platform
-                </p>
-
-                <p class="item-text">
-                  <img
-                    src="./assets/images/icon-listitem.png  "
-                    alt="main-building"
-                    style="margin-right: 5px"
-                  />
-                  Crypto Currency and Tokenomics
-                </p>
-
-                <p class="item-text">
-                  <img
-                    src="./assets/images/icon-listitem.png  "
-                    alt="main-building"
-                    style="margin-right: 5px"
-                  />
-                  Dapp & tools
-                </p>
-              </div>
-            </div>
-            <div class="col col-8">
-              <img
-                src="./assets/images/phone-bg.png"
-                style="width: 100%"
-                alt="phone"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="supporting">
-        <img
-          class="logo"
-          src="./assets/images/WeAreSupporting.png"
-          alt="logo"
-          style="width: 100%; position: relative; z-index: 2"
-        />
-        <img
-          class="bg-shadow"
-          src="./assets/images/shadow-building.png"
-          alt="bg"
-        />
-      </div>
-
-      <div class="wrapper footer">
-        <div class="main">
-          <div class="row" style="margin: 32px 0">
-            <div class="col col-6">
-              <div class="footer-logo">
-                <img
-                  src="./assets/images/logo.png"
-                  alt="logo"
-                  style="width: 60%"
-                />
-              </div>
-              <p class="footer-text">Empower the future of the Internet</p>
-            </div>
-            <div class="col col-6">
-              <div class="row">
-                <div class="col col-4">
-                  <div class="footer-ct">
-                    <img
-                      src="./assets/images/footer-web3lab.png"
-                      alt="web3"
-                      style="width: 100%"
-                    />
-                  </div>
-                  <a class="footer-menu-item" href="#">Blog</a>
-                  <a class="footer-menu-item" href="#">Projects</a>
-                </div>
-                <div class="col col-4">
-                  <div class="footer-ct">
-                    <img
-                      src="./assets/images/footer-follow.png"
-                      alt="follow"
-                      style="width: 100%"
-                    />
-                  </div>
-                  <a class="footer-menu-item" href="#">Github </a>
-                  <a class="footer-menu-item" href="#">LinkedIn</a>
-                </div>
-                <div class="col col-4">
-                  <div class="footer-ct">
-                    <img
-                      src="./assets/images/footer-legal.png"
-                      alt="legal"
-                      style="width: 60%"
-                    />
-                  </div>
-                  <a class="footer-menu-item" href="#">Privacy Policy </a>
-                  <a class="footer-menu-item" href="#">Terms & Conditions</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="footer-line">
-            <div class="row line">
+        <div class="wrapper footer">
+          <div class="main">
+            <div class="row" style="margin: 32px 0">
               <div class="col col-6">
-                <img
-                  class="footer-logo-social"
-                  src="./assets/images/logo-fb.png"
-                  alt="fb"
-                />
-                <img
-                  class="footer-logo-social"
-                  src="./assets/images/logo-twitter.png"
-                  alt="fb"
-                />
-                <img
-                  class="footer-logo-social"
-                  src="./assets/images/logo-insta.png"
-                  alt="fb"
-                />
-                <img
-                  class="footer-logo-social"
-                  src="./assets/images/logo-in.png"
-                  alt="fb"
-                />
-                <img
-                  class="footer-logo-social"
-                  src="./assets/images/logo-youtube.png"
-                  alt="fb"
-                />
-                <img
-                  class="footer-logo-social"
-                  src="./assets/images/logo-piscal.png"
-                  alt="fb"
-                />
+                <div class="footer-logo">
+                  <img
+                    src="./assets/images/logo.png"
+                    alt="logo"
+                    style="width: 60%"
+                  />
+                </div>
+                <p class="footer-text">Empower the future of the Internet</p>
               </div>
-              <div class="col col-6 d-flex justify-content-between">
-                <p class="footer-copyright">
-                  © 2022 Web3Lab™. All Rights Reserved
-                </p>
-                <p class="footer-copyright">Contact: hello@web3lab.network</p>
+              <div class="col col-6">
+                <div class="row">
+                  <div class="col col-4">
+                    <div class="footer-ct">
+                      <img
+                        src="./assets/images/footer-web3lab.png"
+                        alt="web3"
+                        style="width: 100%"
+                      />
+                    </div>
+                    <a class="footer-menu-item" href="#">Blog</a>
+                    <a class="footer-menu-item" href="#">Projects</a>
+                  </div>
+                  <div class="col col-4">
+                    <div class="footer-ct">
+                      <img
+                        src="./assets/images/footer-follow.png"
+                        alt="follow"
+                        style="width: 100%"
+                      />
+                    </div>
+                    <a class="footer-menu-item" href="#">Github </a>
+                    <a class="footer-menu-item" href="#">LinkedIn</a>
+                  </div>
+                  <div class="col col-4">
+                    <div class="footer-ct">
+                      <img
+                        src="./assets/images/footer-legal.png"
+                        alt="legal"
+                        style="width: 60%"
+                      />
+                    </div>
+                    <a class="footer-menu-item" href="#">Privacy Policy </a>
+                    <a class="footer-menu-item" href="#">Terms & Conditions</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-line">
+              <div class="row line">
+                <div class="col col-6">
+                  <img
+                    class="footer-logo-social"
+                    src="./assets/images/logo-fb.png"
+                    alt="fb"
+                  />
+                  <img
+                    class="footer-logo-social"
+                    src="./assets/images/logo-twitter.png"
+                    alt="fb"
+                  />
+                  <img
+                    class="footer-logo-social"
+                    src="./assets/images/logo-insta.png"
+                    alt="fb"
+                  />
+                  <img
+                    class="footer-logo-social"
+                    src="./assets/images/logo-in.png"
+                    alt="fb"
+                  />
+                  <img
+                    class="footer-logo-social"
+                    src="./assets/images/logo-youtube.png"
+                    alt="fb"
+                  />
+                  <img
+                    class="footer-logo-social"
+                    src="./assets/images/logo-piscal.png"
+                    alt="fb"
+                  />
+                </div>
+                <div class="col col-6 d-flex justify-content-between">
+                  <p class="footer-copyright">
+                    © 2022 Web3Lab™. All Rights Reserved
+                  </p>
+                  <p class="footer-copyright">Contact: hello@web3lab.network</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js"
       integrity="sha512-5BqtYqlWfJemW5+v+TZUs22uigI8tXeVah5S/1Z6qBLVO7gakAOtkOzUtgq6dsIo5c0NJdmGPs0H9I+2OHUHVQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
